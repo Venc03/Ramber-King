@@ -130,7 +130,7 @@ class Playground {
     });
 
     $(".button_m").on("click", () => {
-        window.location.href = "../HTML/Menu.html";
+        window.location.href = "../Menu.html";
         new Menu();
     });
   }
