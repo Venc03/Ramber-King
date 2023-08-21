@@ -27,7 +27,7 @@ class Menu{
 
 
         $(".button_p").on("click", ()=>{
-            window.location.href = "../HTML/index.html";
+            window.location.href = "../Game.html";
             new Playground();
         })
         $(".button_c").on("click", ()=>{
