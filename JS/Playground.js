@@ -21,6 +21,8 @@ class Playground {
     }, 5000);
   }
 
+
+  /* jovalaszon kenti ujraallitas */
   resetBotTimer() {
     clearInterval(this.botTimer);
     this.botTimer = setInterval(() => {
@@ -28,6 +30,8 @@ class Playground {
     }, 5000);
   }
 
+
+  /* jatekresz felepites, tabla es kocsik felrajzolasa, kerdes es formatum logika */
   Rounds() {
     if (this.player.getPosition() >= 10) {
       this.showGameOver("<div class='end'>VICTORY<br>Great job with counting. You got " + this.error + " wrong awnser.</div>");
@@ -61,6 +65,7 @@ class Playground {
     txt += `<table class="ptable">`;
     txt += `<tr class="p">`;
 
+    /* player pozicio */
     for (let i = 0; i < 10; i++) {
       txt += `<td>`;
       if (this.player.getPosition() === i) {
@@ -72,6 +77,7 @@ class Playground {
     txt += `</tr>`;
     txt += `<tr class="b">`;
 
+    /* bot pozicio */
     for (let y = 0; y < 10; y++) {
       txt += `<td>`;
       if (this.bot.getPosition() === y) {
@@ -111,6 +117,8 @@ class Playground {
     });
   }
 
+
+
   moveBot() {
     if (this.bot.getPosition() < 10) {
       this.bot.setPosition(this.bot.getPosition() + 1);
@@ -118,6 +126,8 @@ class Playground {
     this.Rounds();
   }
 
+
+  /* jatek vege felirat + mennyi hiba mennyi jo: attol fugg hogy nyertel vagy nem, restart es menu gomb */
   showGameOver(message) {
     const MP = $(".MP");
     let txt = `<div class="endd"><h1 class="endh">Game Over</h1><p>${message}</p>`;
@@ -135,6 +145,8 @@ class Playground {
     });
   }
 
+
+  /* restart nullazas, ujraallitas */
   restartGame() {
     this.player.setPosition(0);
     this.bot.setPosition(0);
@@ -145,5 +157,7 @@ class Playground {
     this.Rounds();
   }
 }
+
+
 
 export default Playground;
